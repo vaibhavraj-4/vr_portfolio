@@ -1,0 +1,6 @@
+{
+  "name": "Docker",
+  "icon": "/icons/docker.png",
+  "category": "Infra",
+  "order": 240
+}

@@ -1,0 +1,285 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" preserveAspectRatio="xMidYMid meet" role="img" aria-label="SplitIT — Stripe ACH income splitting automation">
+  <defs>
+    <linearGradient id="sbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e14"/>
+      <stop offset="100%" stop-color="#141b26"/>
+    </linearGradient>
+
+    <linearGradient id="stripe-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#635bff"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+
+    <linearGradient id="teal2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#17a2b8"/>
+      <stop offset="100%" stop-color="#0f7a8c"/>
+    </linearGradient>
+
+    <linearGradient id="amber2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+
+    <linearGradient id="green2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+
+    <pattern id="sgrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(99, 91, 255, 0.06)" stroke-width="1"/>
+    </pattern>
+
+    <filter id="sglow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Arrow marker -->
+    <marker id="arrowTeal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#17a2b8"/>
+    </marker>
+    <marker id="arrowPurple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#635bff"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#sbg)"/>
+  <rect width="1200" height="750" fill="url(#sgrid)"/>
+
+  <!-- Header strip -->
+  <g transform="translate(40, 32)">
+    <circle cx="8" cy="8" r="6" fill="#fbbf24"/>
+    <text x="24" y="13" font-family="'JetBrains Mono', monospace" font-size="11" fill="#fbbf24" letter-spacing="2" font-weight="500">
+      SPLITIT · STRIPE ACH AUTOMATION · SHIPPED
+    </text>
+  </g>
+
+  <text x="40" y="90" font-family="Roboto, sans-serif" font-size="36" fill="#f9f1e9" font-weight="700" letter-spacing="-0.5">
+    Income splitting on Stripe rails
+  </text>
+  <text x="40" y="122" font-family="Roboto, sans-serif" font-size="16" fill="#8a9099" font-weight="300" font-style="italic">
+    Webhook-driven · End-to-end owned · Stripe Connect · Financial Connections · ACH Debit
+  </text>
+
+  <!-- =======================================================
+       FLOW DIAGRAM — top row: user bank → SplitIT → Stripe
+       ======================================================= -->
+
+  <!-- Step 1: US Bank -->
+  <g transform="translate(60, 180)">
+    <rect width="180" height="100" rx="10" fill="#1a2230" stroke="rgba(99, 91, 255, 0.3)" stroke-width="1.5"/>
+    <text x="16" y="24" font-family="'JetBrains Mono', monospace" font-size="9" fill="#635bff" letter-spacing="2" font-weight="600">STEP 01</text>
+    <!-- Bank icon -->
+    <g transform="translate(70, 38)">
+      <rect x="0" y="20" width="40" height="4" fill="#635bff"/>
+      <rect x="2" y="24" width="4" height="18" fill="#635bff"/>
+      <rect x="14" y="24" width="4" height="18" fill="#635bff"/>
+      <rect x="26" y="24" width="4" height="18" fill="#635bff"/>
+      <rect x="34" y="24" width="4" height="18" fill="#635bff"/>
+      <rect x="0" y="42" width="40" height="4" fill="#635bff"/>
+      <polygon points="20,6 0,20 40,20" fill="#635bff"/>
+    </g>
+    <text x="90" y="92" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" fill="#f9f1e9" font-weight="600">User's US Bank</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <g transform="translate(245, 230)">
+    <line x1="0" y1="0" x2="35" y2="0" stroke="#635bff" stroke-width="2" marker-end="url(#arrowPurple)"/>
+    <text x="17" y="-8" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#8a9099">income</text>
+  </g>
+
+  <!-- Step 2: SplitIT detection -->
+  <g transform="translate(290, 180)">
+    <rect width="180" height="100" rx="10" fill="url(#teal2)" stroke="#17a2b8" stroke-width="1.5" filter="url(#sglow)"/>
+    <text x="16" y="24" font-family="'JetBrains Mono', monospace" font-size="9" fill="#fff" letter-spacing="2" font-weight="600" opacity="0.7">STEP 02</text>
+    <!-- Detection icon -->
+    <g transform="translate(82, 40)" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round">
+      <circle cx="8" cy="8" r="7"/>
+      <line x1="13" y1="13" x2="18" y2="18"/>
+    </g>
+    <text x="90" y="92" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" fill="#fff" font-weight="600">SplitIT detects</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <g transform="translate(475, 230)">
+    <line x1="0" y1="0" x2="35" y2="0" stroke="#17a2b8" stroke-width="2" marker-end="url(#arrowTeal)"/>
+    <text x="17" y="-8" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#8a9099">match</text>
+  </g>
+
+  <!-- Step 3: Rules Engine -->
+  <g transform="translate(520, 180)">
+    <rect width="180" height="100" rx="10" fill="#1a2230" stroke="rgba(23, 162, 184, 0.4)" stroke-width="1.5"/>
+    <text x="16" y="24" font-family="'JetBrains Mono', monospace" font-size="9" fill="#17a2b8" letter-spacing="2" font-weight="600">STEP 03</text>
+    <g transform="translate(22, 42)">
+      <!-- rules lines -->
+      <rect x="0" y="0" width="8" height="4" fill="#17a2b8"/>
+      <rect x="12" y="0" width="40" height="4" fill="#3a4354"/>
+      <rect x="0" y="10" width="24" height="4" fill="#17a2b8"/>
+      <rect x="28" y="10" width="24" height="4" fill="#3a4354"/>
+      <rect x="0" y="20" width="14" height="4" fill="#17a2b8"/>
+      <rect x="18" y="20" width="34" height="4" fill="#3a4354"/>
+      <rect x="0" y="30" width="30" height="4" fill="#17a2b8"/>
+      <rect x="34" y="30" width="18" height="4" fill="#3a4354"/>
+
+      <text x="68" y="8" font-family="'JetBrains Mono', monospace" font-size="9" fill="#8a9099">→ 35% rent</text>
+      <text x="68" y="20" font-family="'JetBrains Mono', monospace" font-size="9" fill="#8a9099">→ 20% savings</text>
+      <text x="68" y="32" font-family="'JetBrains Mono', monospace" font-size="9" fill="#8a9099">→ $200 utilities</text>
+    </g>
+    <text x="90" y="92" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" fill="#f9f1e9" font-weight="600">Rules Engine</text>
+  </g>
+
+  <!-- Arrow 3 (down) -->
+  <g transform="translate(610, 290)">
+    <line x1="0" y1="0" x2="0" y2="35" stroke="#17a2b8" stroke-width="2" marker-end="url(#arrowTeal)"/>
+    <text x="10" y="22" font-family="'JetBrains Mono', monospace" font-size="9" fill="#8a9099">ACH debit</text>
+  </g>
+
+  <!-- Step 4: ACH Debit -->
+  <g transform="translate(750, 180)">
+    <rect width="180" height="100" rx="10" fill="#1a2230" stroke="rgba(99, 91, 255, 0.3)" stroke-width="1.5"/>
+    <text x="16" y="24" font-family="'JetBrains Mono', monospace" font-size="9" fill="#635bff" letter-spacing="2" font-weight="600">STEP 04</text>
+    <g transform="translate(60, 38)">
+      <!-- ACH arrows -->
+      <path d="M 0 10 L 60 10" stroke="#635bff" stroke-width="3" fill="none" marker-end="url(#arrowPurple)"/>
+      <path d="M 60 24 L 0 24" stroke="#635bff" stroke-width="3" fill="none" marker-end="url(#arrowPurple)"/>
+      <text x="30" y="46" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#635bff" font-weight="600">$$$</text>
+    </g>
+    <text x="90" y="92" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" fill="#f9f1e9" font-weight="600">ACH Debit (pull)</text>
+  </g>
+
+  <!-- Arrow from step 4 to step 5 -->
+  <g transform="translate(935, 230)">
+    <line x1="0" y1="0" x2="35" y2="0" stroke="#635bff" stroke-width="2" marker-end="url(#arrowPurple)"/>
+    <text x="17" y="-8" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#8a9099">settle</text>
+  </g>
+
+  <!-- Step 5: Stripe account -->
+  <g transform="translate(980, 180)">
+    <rect width="160" height="100" rx="10" fill="url(#stripe-purple)" stroke="#635bff" stroke-width="1.5" filter="url(#sglow)"/>
+    <text x="16" y="24" font-family="'JetBrains Mono', monospace" font-size="9" fill="#fff" letter-spacing="2" font-weight="600" opacity="0.7">STEP 05</text>
+    <text x="80" y="56" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" fill="#fff" font-weight="900" letter-spacing="-1">Stripe</text>
+    <text x="80" y="88" text-anchor="middle" font-family="Roboto, sans-serif" font-size="11" fill="#fff" font-weight="500" opacity="0.85">user's account</text>
+  </g>
+
+  <!-- =======================================================
+       WEBHOOK LAYER (middle row)
+       ======================================================= -->
+  <g transform="translate(60, 330)">
+    <rect width="1080" height="80" rx="10" fill="#1a2230" stroke="rgba(99, 91, 255, 0.2)" stroke-width="1"/>
+    <text x="20" y="26" font-family="'JetBrains Mono', monospace" font-size="10" fill="#635bff" letter-spacing="2" font-weight="600">WEBHOOK LAYER · Stripe events confirm every transition</text>
+
+    <g transform="translate(20, 42)" font-family="'JetBrains Mono', monospace" font-size="10" fill="#8a9099">
+      <text x="0" y="0">payment_intent.succeeded</text>
+      <text x="220" y="0">→ charge.succeeded</text>
+      <text x="400" y="0">→ transfer.created</text>
+      <text x="580" y="0">→ payout.paid</text>
+    </g>
+    <g transform="translate(20, 60)" font-family="'JetBrains Mono', monospace" font-size="9" fill="#635bff" opacity="0.8">
+      <text x="0" y="0">signed · idempotent · retried on failure</text>
+    </g>
+
+    <!-- animated pulse dot -->
+    <circle cx="1050" cy="40" r="5" fill="#4ade80">
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <text x="1060" y="44" font-family="'JetBrains Mono', monospace" font-size="10" fill="#4ade80">live</text>
+  </g>
+
+  <!-- =======================================================
+       TRANSFERS OUT — bottom row
+       ======================================================= -->
+  <g transform="translate(60, 450)">
+    <rect width="560" height="180" rx="10" fill="#1a2230" stroke="rgba(74, 222, 128, 0.2)" stroke-width="1"/>
+    <text x="24" y="28" font-family="'JetBrains Mono', monospace" font-size="10" fill="#4ade80" letter-spacing="2" font-weight="600">STEP 06 · AUTOMATED TRANSFERS</text>
+
+    <!-- Three payee cards -->
+    <g transform="translate(24, 50)">
+      <!-- Landlord -->
+      <rect width="164" height="110" rx="8" fill="#0f1824" stroke="rgba(74, 222, 128, 0.3)"/>
+      <g transform="translate(14, 14)">
+        <circle cx="12" cy="12" r="10" fill="url(#green2)" opacity="0.2"/>
+        <text x="12" y="16" text-anchor="middle" font-family="Roboto, sans-serif" font-size="14" fill="#4ade80" font-weight="700">🏠</text>
+      </g>
+      <text x="50" y="24" font-family="Roboto, sans-serif" font-size="11" fill="#f9f1e9" font-weight="600">Landlord</text>
+      <text x="50" y="38" font-family="'JetBrains Mono', monospace" font-size="9" fill="#8a9099">fixed · $1,200</text>
+      <text x="14" y="72" font-family="Roboto, sans-serif" font-size="18" fill="#4ade80" font-weight="700">$1,200.00</text>
+      <text x="14" y="92" font-family="'JetBrains Mono', monospace" font-size="8" fill="#8a9099" letter-spacing="1">TRANSFER: CONFIRMED</text>
+
+      <!-- Savings -->
+      <rect x="180" width="164" height="110" rx="8" fill="#0f1824" stroke="rgba(74, 222, 128, 0.3)"/>
+      <g transform="translate(194, 14)">
+        <circle cx="12" cy="12" r="10" fill="url(#green2)" opacity="0.2"/>
+        <text x="12" y="16" text-anchor="middle" font-family="Roboto, sans-serif" font-size="14" fill="#4ade80" font-weight="700">💰</text>
+      </g>
+      <text x="230" y="24" font-family="Roboto, sans-serif" font-size="11" fill="#f9f1e9" font-weight="600">Savings</text>
+      <text x="230" y="38" font-family="'JetBrains Mono', monospace" font-size="9" fill="#8a9099">percentage · 20%</text>
+      <text x="194" y="72" font-family="Roboto, sans-serif" font-size="18" fill="#4ade80" font-weight="700">$800.00</text>
+      <text x="194" y="92" font-family="'JetBrains Mono', monospace" font-size="8" fill="#8a9099" letter-spacing="1">TRANSFER: CONFIRMED</text>
+
+      <!-- Utilities -->
+      <rect x="360" width="164" height="110" rx="8" fill="#0f1824" stroke="rgba(74, 222, 128, 0.3)"/>
+      <g transform="translate(374, 14)">
+        <circle cx="12" cy="12" r="10" fill="url(#green2)" opacity="0.2"/>
+        <text x="12" y="16" text-anchor="middle" font-family="Roboto, sans-serif" font-size="14" fill="#4ade80" font-weight="700">⚡</text>
+      </g>
+      <text x="410" y="24" font-family="Roboto, sans-serif" font-size="11" fill="#f9f1e9" font-weight="600">Utilities</text>
+      <text x="410" y="38" font-family="'JetBrains Mono', monospace" font-size="9" fill="#8a9099">fixed · $200</text>
+      <text x="374" y="72" font-family="Roboto, sans-serif" font-size="18" fill="#4ade80" font-weight="700">$200.00</text>
+      <text x="374" y="92" font-family="'JetBrains Mono', monospace" font-size="8" fill="#8a9099" letter-spacing="1">TRANSFER: CONFIRMED</text>
+    </g>
+  </g>
+
+  <!-- =======================================================
+       AUDIT TRAIL — bottom right
+       ======================================================= -->
+  <g transform="translate(640, 450)">
+    <rect width="500" height="180" rx="10" fill="#1a2230" stroke="rgba(23, 162, 184, 0.2)" stroke-width="1"/>
+    <text x="24" y="28" font-family="'JetBrains Mono', monospace" font-size="10" fill="#17a2b8" letter-spacing="2" font-weight="600">AUDIT TRAIL · EVERY STEP RECORDED</text>
+
+    <g transform="translate(24, 50)" font-family="'JetBrains Mono', monospace" font-size="10">
+      <g transform="translate(0, 0)">
+        <rect x="0" y="-8" width="3" height="14" fill="#4ade80"/>
+        <text x="12" y="2" fill="#f9f1e9">income_event.created</text>
+        <text x="450" y="2" text-anchor="end" fill="#8a9099">09:42:14</text>
+      </g>
+      <g transform="translate(0, 20)">
+        <rect x="0" y="-8" width="3" height="14" fill="#4ade80"/>
+        <text x="12" y="2" fill="#f9f1e9">rule_match.success</text>
+        <text x="450" y="2" text-anchor="end" fill="#8a9099">09:42:14</text>
+      </g>
+      <g transform="translate(0, 40)">
+        <rect x="0" y="-8" width="3" height="14" fill="#4ade80"/>
+        <text x="12" y="2" fill="#f9f1e9">ach_debit.initiated</text>
+        <text x="450" y="2" text-anchor="end" fill="#8a9099">09:42:15</text>
+      </g>
+      <g transform="translate(0, 60)">
+        <rect x="0" y="-8" width="3" height="14" fill="#4ade80"/>
+        <text x="12" y="2" fill="#f9f1e9">webhook.payment_succeeded</text>
+        <text x="450" y="2" text-anchor="end" fill="#8a9099">09:42:18</text>
+      </g>
+      <g transform="translate(0, 80)">
+        <rect x="0" y="-8" width="3" height="14" fill="#4ade80"/>
+        <text x="12" y="2" fill="#f9f1e9">transfer.landlord.sent</text>
+        <text x="450" y="2" text-anchor="end" fill="#8a9099">09:42:19</text>
+      </g>
+      <g transform="translate(0, 100)">
+        <rect x="0" y="-8" width="3" height="14" fill="#4ade80"/>
+        <text x="12" y="2" fill="#f9f1e9">transfer.savings.sent</text>
+        <text x="450" y="2" text-anchor="end" fill="#8a9099">09:42:19</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Bottom signature -->
+  <g transform="translate(40, 698)">
+    <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="10" fill="#4a5262" letter-spacing="1">
+      SHIPPED · NOV 2025 — APR 2026 · ATH INFOSYSTEMS · MY FIRST PROJECT
+    </text>
+    <text x="1120" y="0" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" fill="#4a5262" letter-spacing="1">
+      VAIBHAV RAJ
+    </text>
+  </g>
+</svg>

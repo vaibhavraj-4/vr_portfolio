@@ -1,0 +1,21 @@
+{
+  "title": "AI/ML Engineer",
+  "org": "ATH Infosystems",
+  "dateRange": "November 2025 — Present",
+  "location": "Delhi NCR · India",
+  "description": "Currently on <strong>SINTRA</strong> — a 4-layer real-time tracking analytics stack for a European industrial IoT client. Built the ETL pipeline, InfluxDB storage model, 3 Grafana dashboards, and 6 alert rules. Phase 1 of 10 delivered and approved.<br /><br />Previously shipped <strong>SplitIT</strong>, a Stripe ACH-based income-splitting platform, end-to-end — which earned me the SINTRA engagement.",
+  "skills": [
+    "Python",
+    "pandas",
+    "InfluxDB",
+    "Grafana",
+    "Flux",
+    "Tile38",
+    "Stripe",
+    "LLM"
+  ],
+  "logo": "/icons/ath-logo.png",
+  "order": 10,
+  "side": "left",
+  "current": true
+}

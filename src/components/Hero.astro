@@ -1,0 +1,72 @@
+---
+import { getEntry } from 'astro:content';
+const hero = await getEntry('hero', 'index');
+const contact = await getEntry('contact', 'index');
+
+const data = hero?.data ?? {
+  name: 'Vaibhav Raj',
+  role: 'AI/ML Engineer · ATH Infosystems',
+  tagline: 'Programmer / Developer / Creator',
+  status: 'Engaged · SINTRA Phase 1 of 10',
+};
+const socials = contact?.data;
+---
+
+<section id="hero" class="hero-section" aria-label="Introduction">
+  <aside class="social-sidebar" aria-label="Social links">
+    <ul>
+      {socials?.linkedin && (
+        <li>
+          <a href={socials.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <img src="/icons/linkedin-logo.png" alt="" onerror="this.style.visibility='hidden'" />
+          </a>
+        </li>
+      )}
+      {socials?.github && (
+        <li>
+          <a href={socials.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <img src="/icons/github-logo.png" alt="" onerror="this.style.visibility='hidden'" />
+          </a>
+        </li>
+      )}
+      {socials?.email && (
+        <li>
+          <a href={`mailto:${socials.email}`} aria-label="Email">
+            <img src="/icons/mail.png" alt="" onerror="this.style.visibility='hidden'" />
+          </a>
+        </li>
+      )}
+      {socials?.facebook && (
+        <li>
+          <a href={socials.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <img src="/icons/facebook.png" alt="" onerror="this.style.visibility='hidden'" />
+          </a>
+        </li>
+      )}
+      {socials?.instagram && (
+        <li>
+          <a href={socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img src="/icons/insta.png" alt="" onerror="this.style.visibility='hidden'" />
+          </a>
+        </li>
+      )}
+    </ul>
+  </aside>
+
+  <div id="large-header" class="large-header">
+    <div id="particles-js" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <h1 class="main-title">{data.name}</h1>
+      <p class="role-line">{data.role}</p>
+      <p class="information">{data.tagline}</p>
+    </div>
+
+    <a href="#about" class="scroll-cue" aria-label="Scroll to About">
+      <span>Scroll</span>
+      <svg width="14" height="30" viewBox="0 0 14 30" fill="none" aria-hidden="true">
+        <path d="M7 0V26M7 26L1 20M7 26L13 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </a>
+  </div>
+</section>

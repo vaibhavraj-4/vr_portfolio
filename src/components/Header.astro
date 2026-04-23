@@ -1,0 +1,52 @@
+---
+import { getEntry } from 'astro:content';
+const contact = await getEntry('contact', 'index');
+const resumeUrl = contact?.data.resumeUrl ?? '/resume.pdf';
+---
+
+<header class="site-header">
+  <div class="container nav-container">
+    <a href="#hero" class="nav-brand" aria-label="Home">
+      <img src="/icons/vaibhav_logo.png" alt="VR" onerror="this.style.display='none'" />
+      <span>Vaibhav Raj</span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Section navigation">
+      <ul>
+        <li><a href="#about" data-nav="about">About</a></li>
+        <li><a href="#journey" data-nav="journey">Journey</a></li>
+        <li><a href="#projects" data-nav="projects">Projects</a></li>
+        <li><a href="#credentials" data-nav="credentials">Credentials</a></li>
+        <li><a href="#contact" data-nav="contact">Contact</a></li>
+        <li>
+          <a
+            class="nav-resume"
+            href={resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer">Resume ↗</a>
+        </li>
+      </ul>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <ul>
+      <li><a href="#about" data-nav="about">About</a></li>
+      <li><a href="#journey" data-nav="journey">Journey</a></li>
+      <li><a href="#projects" data-nav="projects">Projects</a></li>
+      <li><a href="#credentials" data-nav="credentials">Credentials</a></li>
+      <li><a href="#contact" data-nav="contact">Contact</a></li>
+      <li>
+        <a
+          class="nav-resume"
+          href={resumeUrl}
+          target="_blank"
+          rel="noopener noreferrer">Resume ↗</a>
+      </li>
+    </ul>
+  </div>
+</header>

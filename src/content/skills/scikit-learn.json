@@ -1,0 +1,6 @@
+{
+  "name": "scikit-learn",
+  "icon": "/icons/scikit-learn.png",
+  "category": "Data & ML",
+  "order": 150
+}

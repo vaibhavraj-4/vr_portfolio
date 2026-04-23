@@ -1,0 +1,14 @@
+{
+  "title": "Multimodal Emotion Detection",
+  "section": "Academic ML",
+  "summary": "Audio + text fusion with Streamlit UI",
+  "description": "Fused audio and text signals to classify emotion. Streamlit interface with mic input, text, and emoji output. Taught me fusion pipelines and real-time inference UX.",
+  "image": "/projects/emotion-detection.svg",
+  "tags": [
+    "TensorFlow",
+    "Streamlit",
+    "NLP",
+    "Audio"
+  ],
+  "order": 60
+}

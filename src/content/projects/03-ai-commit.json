@@ -1,0 +1,14 @@
+{
+  "title": "AI Commit Risk Analyser",
+  "section": "Internship",
+  "summary": "SonarQube + LLM code review",
+  "description": "Integrated SonarQube and SonarCloud for code analysis across 29 languages, paired with an LLM-powered automated review system. Deployed a Bug Frequency Server that used historical data to predict code-change impact — <strong>40% reduction</strong> in critical production bugs, <strong>50% improvement</strong> in review efficiency, <strong>60% reduction</strong> in manual review time.",
+  "image": "/projects/ai-commit-risk.svg",
+  "tags": [
+    "SonarQube",
+    "LLM",
+    "Python",
+    "Java"
+  ],
+  "order": 30
+}

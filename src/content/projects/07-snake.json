@@ -1,0 +1,14 @@
+{
+  "title": "Snake Game",
+  "section": "For Fun",
+  "summary": "Classic Snake in Python Turtle",
+  "description": "Classic Snake in Python's Turtle module. Game loops, collision detection, the small joy of making pixels move.",
+  "image": "/projects/snake.png",
+  "link": "/projects/main.exe",
+  "linkLabel": "Play →",
+  "tags": [
+    "Python",
+    "Turtle"
+  ],
+  "order": 70
+}

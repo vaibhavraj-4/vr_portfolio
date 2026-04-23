@@ -1,0 +1,13 @@
+{
+  "title": "Automated Waste Segregation",
+  "section": "Academic ML",
+  "summary": "CNN classifier · Organic vs Recyclable",
+  "description": "CNN-based ML system that classifies waste into Organic and Recyclable categories. Flask backend, simple web UI, real-time classification with recycling recommendations. My first end-to-end computer vision build.",
+  "image": "/projects/waste-segregation.svg",
+  "tags": [
+    "CNN",
+    "TensorFlow",
+    "Flask"
+  ],
+  "order": 50
+}

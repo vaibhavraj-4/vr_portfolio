@@ -1,0 +1,18 @@
+{
+  "title": "Python Developer Intern",
+  "org": "Opstree Solutions",
+  "dateRange": "July 2024 — October 2024",
+  "location": "Remote",
+  "description": "Worked across AI/ML, data science, and cloud automation. Built the <strong>AI Commit Risk Analyser</strong> integrating SonarQube with LLMs for severity-based code review, and an infrastructure-diagram generator driven by Gemini with careful prompt engineering.",
+  "skills": [
+    "Python",
+    "Flask",
+    "LLM",
+    "SonarQube",
+    "Gemini"
+  ],
+  "logo": "/icons/opstree-logo.jpeg",
+  "order": 20,
+  "side": "right",
+  "current": false
+}

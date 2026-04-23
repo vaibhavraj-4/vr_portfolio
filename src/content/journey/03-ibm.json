@@ -1,0 +1,18 @@
+{
+  "title": "Data Analyst Intern",
+  "org": "IBM SkillsBuild",
+  "dateRange": "July 2024 — August 2024",
+  "location": "Remote",
+  "description": "A deep dive into data analytics: core concepts, cleaning, visualization, and the toolkit behind turning raw numbers into narrative. Sharpened my understanding of how insight actually gets produced — a foundation I now rely on every day in production ETL work.",
+  "skills": [
+    "Python",
+    "NumPy",
+    "Pandas",
+    "Matplotlib",
+    "Seaborn"
+  ],
+  "logo": "/icons/02_8-bar-reverse.svg",
+  "order": 30,
+  "side": "left",
+  "current": false
+}

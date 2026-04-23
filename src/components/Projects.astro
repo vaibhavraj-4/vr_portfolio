@@ -1,0 +1,116 @@
+---
+import { getCollection } from 'astro:content';
+
+const all = (await getCollection('projects')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+
+// Group by section
+const sections = [
+  'Production Work',
+  'Internship',
+  'Academic ML',
+  'For Fun',
+] as const;
+
+const grouped = sections.map((section) => ({
+  section,
+  heading:
+    section === 'Production Work'
+      ? 'Production Work — ATH Infosystems'
+      : section === 'Internship'
+      ? 'Internship — Opstree Solutions'
+      : section === 'Academic ML'
+      ? 'Academic ML'
+      : 'For Fun',
+  items: all.filter((p) => p.data.section === section),
+}));
+
+const statusClass = (s?: string) => {
+  if (!s) return '';
+  if (s.toLowerCase() === 'active') return 'live';
+  if (s.toLowerCase() === 'shipped') return 'shipped';
+  return 'shipped';
+};
+---
+
+<section id="projects" class="projects-section">
+  <div class="container">
+    <div class="projects-head">
+      <h2 class="section-heading">Projects</h2>
+      <p class="section-lead">
+        Two production systems running right now, plus a handful of earlier ML
+        and automation projects.
+      </p>
+    </div>
+
+    {grouped.map((group) =>
+      group.items.length > 0 ? (
+        <>
+          <h3 class="subsection-heading">{group.heading}</h3>
+
+          {group.section === 'For Fun' ? (
+            <div class="fun-grid">
+              {group.items.map((p) => (
+                <div class="fun-card" data-aos="fade-up">
+                  {p.data.image && (
+                    <img
+                      src={p.data.image}
+                      alt={p.data.title}
+                      onerror="this.style.display='none'"
+                    />
+                  )}
+                  <h4>{p.data.title}</h4>
+                  <p>{p.data.summary}</p>
+                  {p.data.link && (
+                    <a
+                      href={p.data.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="project-link"
+                    >
+                      {p.data.linkLabel}
+                    </a>
+                  )}
+                </div>
+              ))}
+            </div>
+          ) : (
+            group.items.map((p) => (
+              <div class="project" data-aos="fade-up">
+                <h4>
+                  {p.data.title}
+                  {p.data.statusLabel && (
+                    <span class={`status-chip ${statusClass(p.data.status)}`}>
+                      {p.data.statusLabel}
+                    </span>
+                  )}
+                </h4>
+                <div class="project-content">
+                  {p.data.image && (
+                    <img
+                      src={p.data.image}
+                      alt={p.data.title}
+                      onerror="this.style.display='none'"
+                    />
+                  )}
+                  <p set:html={p.data.description} />
+                  {p.data.link && (
+                    <a
+                      href={p.data.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="project-link"
+                    >
+                      {p.data.linkLabel}
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))
+          )}
+        </>
+      ) : null
+    )}
+  </div>
+</section>

@@ -1,0 +1,6 @@
+{
+  "name": "pandas",
+  "icon": "/icons/Pandas.png",
+  "category": "Data & ML",
+  "order": 100
+}

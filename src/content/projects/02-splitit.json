@@ -1,0 +1,18 @@
+{
+  "title": "SplitIT — Stripe ACH Automation",
+  "status": "Shipped",
+  "statusLabel": "Shipped",
+  "section": "Production Work",
+  "summary": "Income splitting on Stripe rails",
+  "description": "A fintech-style automation platform built on Stripe ACH and Financial Connections. When income hits a user's US bank account, SplitIT detects it, applies user-defined rules, pulls funds via ACH Debit, and transfers the pieces to payee Stripe accounts — end-to-end, webhook-driven, fully audited.<br /><br /><strong>Context:</strong> My first project at ATH, assigned as a temporary fintech engagement outside my core AI/ML scope. I took end-to-end ownership, delivered it, and that's what earned me the SINTRA assignment.<br /><br />Not an ML project — but a demonstration that I can own the plumbing side of production systems. The same muscle that makes SINTRA's ETL pipeline reliable.",
+  "image": "/projects/splitit-flow.svg",
+  "tags": [
+    "Python",
+    "Stripe Connect",
+    "ACH Debit",
+    "Webhooks"
+  ],
+  "order": 20,
+  "featured": true,
+  "linkLabel": "Read case study →"
+}

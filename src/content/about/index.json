@@ -1,0 +1,22 @@
+{
+  "typedStrings": [
+    "Hello! I'm Vaibhav Raj.",
+    "AI/ML Engineer @ ATH Infosystems.",
+    "Currently shipping SINTRA analytics.",
+    "I build production data systems."
+  ],
+  "blocks": [
+    {
+      "heading": "About Me",
+      "body": "Hello! I'm Vaibhav Raj, an AI/ML Engineer at <strong>ATH Infosystems</strong>. I graduated BCA from BCIIT (GGSIPU, CGPA 8.691) in 2025 and joined ATH in November, where I currently ship real-time stability analytics on the <strong>SINTRA</strong> platform — an engagement with a European industrial IoT client. Phase 1 of 10 delivered and approved."
+    },
+    {
+      "heading": "From SplitIT to SINTRA",
+      "body": "My first project at ATH was <strong>SplitIT</strong>, a fintech automation platform built on Stripe ACH and Financial Connections that splits incoming income by user-defined rules. It was technically outside my core AI/ML scope, but I took end-to-end ownership, delivered it, and that earned me the SINTRA assignment — a multi-phase ML &amp; data engineering engagement that's now my primary focus."
+    },
+    {
+      "heading": "What I Work On",
+      "body": "Day-to-day, I live in <strong>Python</strong>, <strong>pandas</strong>, <strong>InfluxDB</strong>, and <strong>Grafana</strong> — building ETL pipelines that turn millions of raw sensor positions into scored, classified, actionable signal. I care about architecture that separates concerns (business logic stays in pipelines, dashboards stay dumb and fast), observability that tells you when things degrade, and the occasional LLM-powered tool that makes the whole workflow faster."
+    }
+  ]
+}

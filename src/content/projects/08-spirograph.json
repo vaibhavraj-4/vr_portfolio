@@ -1,0 +1,15 @@
+{
+  "title": "Spirograph",
+  "section": "For Fun",
+  "summary": "Geometry as ornament",
+  "description": "Mathematical patterns rendered through code — where geometry becomes ornament. A small sketch on Python's Turtle module.",
+  "image": "/projects/spirograph.png",
+  "link": "/projects/spirograph.exe",
+  "linkLabel": "Open →",
+  "tags": [
+    "Python",
+    "Turtle",
+    "Creative Coding"
+  ],
+  "order": 80
+}

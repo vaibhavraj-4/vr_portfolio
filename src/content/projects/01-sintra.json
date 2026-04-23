@@ -1,0 +1,21 @@
+{
+  "title": "SINTRA Stability Analytics",
+  "status": "Active",
+  "statusLabel": "Active · Phase 1 of 10",
+  "section": "Production Work",
+  "summary": "4-layer real-time analytics on UWB indoor tracking",
+  "description": "A 4-layer real-time analytics stack on top of a UWB + camera indoor tracking platform for a European industrial IoT client. Turns millions of raw x/y/z coordinates into per-asset stability scores, device health classes, zone quality tiers, and alerts — before operators notice problems.<br /><br /><strong>Layer A — Source:</strong> x/y/z positions from InfluxDB or REST (swappable via config).<br /><strong>Layer B — ETL:</strong> jitter calculation, scoring, classification, Tile38 zone enrichment, incremental processing with state tracking.<br /><strong>Layer C — Visualization:</strong> 3 Grafana dashboards, 21 panels, 5 interactive filters.<br /><strong>Layer D — Alerting:</strong> 6 alert rules with WARNING / CRITICAL severity.<br /><br /><strong>Results:</strong> 16 assets tracked across a 9-hour trade-fair session with 12,732 one-minute windows processed. Median stability 82.7 / 100; 90% classified GREEN.",
+  "image": "/projects/sintra-dashboard.svg",
+  "tags": [
+    "Python",
+    "pandas",
+    "InfluxDB",
+    "Grafana",
+    "Flux",
+    "Tile38",
+    "ETL"
+  ],
+  "order": 10,
+  "featured": true,
+  "linkLabel": "Read case study →"
+}

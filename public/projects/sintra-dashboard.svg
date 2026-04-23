@@ -1,0 +1,244 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" preserveAspectRatio="xMidYMid meet" role="img" aria-label="SINTRA Stability Analytics — 4-layer architecture">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e14"/>
+      <stop offset="100%" stop-color="#141b26"/>
+    </linearGradient>
+
+    <!-- Teal glow for active elements -->
+    <linearGradient id="teal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#17a2b8"/>
+      <stop offset="100%" stop-color="#0f7a8c"/>
+    </linearGradient>
+
+    <!-- Status colors -->
+    <linearGradient id="green" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+
+    <!-- Grid pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(23, 162, 184, 0.06)" stroke-width="1"/>
+    </pattern>
+
+    <!-- Glow filter for accent elements -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="750" fill="url(#bg)"/>
+  <rect width="1200" height="750" fill="url(#grid)"/>
+
+  <!-- Title strip -->
+  <g transform="translate(40, 32)">
+    <circle cx="8" cy="8" r="6" fill="#22c55e">
+      <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="24" y="13" font-family="'JetBrains Mono', monospace" font-size="11" fill="#17a2b8" letter-spacing="2" font-weight="500">
+      SINTRA · STABILITY ANALYTICS · ACTIVE
+    </text>
+  </g>
+
+  <!-- Main title -->
+  <text x="40" y="90" font-family="Roboto, sans-serif" font-size="36" fill="#f9f1e9" font-weight="700" letter-spacing="-0.5">
+    Real-time tracking analytics
+  </text>
+  <text x="40" y="122" font-family="Roboto, sans-serif" font-size="16" fill="#8a9099" font-weight="300" font-style="italic">
+    4-layer pipeline · Python · InfluxDB · Grafana · European industrial IoT client
+  </text>
+
+  <!-- === LAYER A: SOURCE === -->
+  <g transform="translate(40, 170)">
+    <rect width="1120" height="110" rx="10" fill="#1a2230" stroke="rgba(23, 162, 184, 0.2)" stroke-width="1"/>
+    <text x="24" y="28" font-family="'JetBrains Mono', monospace" font-size="10" fill="#17a2b8" letter-spacing="2" font-weight="600">LAYER A · SOURCE</text>
+
+    <!-- InfluxDB cylinder -->
+    <g transform="translate(24, 44)">
+      <ellipse cx="32" cy="10" rx="32" ry="8" fill="#17a2b8" opacity="0.3"/>
+      <rect x="0" y="10" width="64" height="40" fill="url(#teal)" opacity="0.9"/>
+      <ellipse cx="32" cy="50" rx="32" ry="8" fill="#0f7a8c"/>
+      <ellipse cx="32" cy="10" rx="32" ry="8" fill="#17a2b8"/>
+      <text x="32" y="14" text-anchor="middle" font-family="Roboto, sans-serif" font-size="9" fill="#fff" font-weight="600">InfluxDB</text>
+    </g>
+
+    <text x="104" y="68" font-family="Roboto, sans-serif" font-size="13" fill="#d4d8de" font-weight="500">x/y/z positions from UWB + camera tracking</text>
+    <text x="104" y="88" font-family="'JetBrains Mono', monospace" font-size="11" fill="#8a9099">swappable: influxdb ↔ rest · idb3.sinfosy.com</text>
+
+    <!-- Right-side data stream hint -->
+    <g transform="translate(900, 58)">
+      <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="10" fill="#17a2b8">→ 12,732 windows</text>
+      <text x="0" y="16" font-family="'JetBrains Mono', monospace" font-size="10" fill="#8a9099">16 assets · 4 devices</text>
+    </g>
+  </g>
+
+  <!-- Flow arrow -->
+  <g transform="translate(600, 290)">
+    <line x1="0" y1="0" x2="0" y2="14" stroke="#17a2b8" stroke-width="2"/>
+    <path d="M -5 10 L 0 16 L 5 10" fill="none" stroke="#17a2b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- === LAYER B: ETL === -->
+  <g transform="translate(40, 312)">
+    <rect width="1120" height="130" rx="10" fill="#1a2230" stroke="rgba(23, 162, 184, 0.2)" stroke-width="1"/>
+    <text x="24" y="28" font-family="'JetBrains Mono', monospace" font-size="10" fill="#17a2b8" letter-spacing="2" font-weight="600">LAYER B · ETL PIPELINE</text>
+
+    <!-- Processing step boxes -->
+    <g transform="translate(24, 48)">
+      <!-- jitter -->
+      <rect width="180" height="64" rx="6" fill="#0f1824" stroke="rgba(23, 162, 184, 0.3)"/>
+      <text x="14" y="22" font-family="Roboto, sans-serif" font-size="12" fill="#f9f1e9" font-weight="600">Jitter calc</text>
+      <text x="14" y="40" font-family="'JetBrains Mono', monospace" font-size="10" fill="#8a9099">sqrt(jx² + jy² + jz²)</text>
+      <text x="14" y="54" font-family="'JetBrains Mono', monospace" font-size="10" fill="#17a2b8">median: 4.6mm</text>
+
+      <!-- scoring -->
+      <rect x="200" width="180" height="64" rx="6" fill="#0f1824" stroke="rgba(23, 162, 184, 0.3)"/>
+      <text x="214" y="22" font-family="Roboto, sans-serif" font-size="12" fill="#f9f1e9" font-weight="600">Scoring</text>
+      <text x="214" y="40" font-family="'JetBrains Mono', monospace" font-size="10" fill="#8a9099">100 - jitter×1.25</text>
+      <text x="214" y="54" font-family="'JetBrains Mono', monospace" font-size="10" fill="#17a2b8">avg: 82.7 / 100</text>
+
+      <!-- classification -->
+      <rect x="400" width="180" height="64" rx="6" fill="#0f1824" stroke="rgba(23, 162, 184, 0.3)"/>
+      <text x="414" y="22" font-family="Roboto, sans-serif" font-size="12" fill="#f9f1e9" font-weight="600">Classify</text>
+      <text x="414" y="40" font-family="'JetBrains Mono', monospace" font-size="10" fill="#8a9099">green / yellow / red</text>
+      <!-- mini dots -->
+      <circle cx="420" cy="54" r="4" fill="url(#green)"/>
+      <circle cx="434" cy="54" r="4" fill="url(#amber)"/>
+      <circle cx="448" cy="54" r="4" fill="#ef4444"/>
+
+      <!-- zone enrichment -->
+      <rect x="600" width="180" height="64" rx="6" fill="#0f1824" stroke="rgba(23, 162, 184, 0.3)"/>
+      <text x="614" y="22" font-family="Roboto, sans-serif" font-size="12" fill="#f9f1e9" font-weight="600">Zone enrich</text>
+      <text x="614" y="40" font-family="'JetBrains Mono', monospace" font-size="10" fill="#8a9099">Tile38 geofence</text>
+      <text x="614" y="54" font-family="'JetBrains Mono', monospace" font-size="10" fill="#17a2b8">2 zones tracked</text>
+
+      <!-- aggregate -->
+      <rect x="800" width="272" height="64" rx="6" fill="#0f1824" stroke="rgba(23, 162, 184, 0.3)"/>
+      <text x="814" y="22" font-family="Roboto, sans-serif" font-size="12" fill="#f9f1e9" font-weight="600">Aggregate · Device &amp; Zone quality</text>
+      <text x="814" y="40" font-family="'JetBrains Mono', monospace" font-size="10" fill="#8a9099">1m asset → 5m device → 5m zone</text>
+      <text x="814" y="54" font-family="'JetBrains Mono', monospace" font-size="10" fill="#17a2b8">incremental · state tracked</text>
+    </g>
+  </g>
+
+  <!-- Flow arrow -->
+  <g transform="translate(600, 452)">
+    <line x1="0" y1="0" x2="0" y2="14" stroke="#17a2b8" stroke-width="2"/>
+    <path d="M -5 10 L 0 16 L 5 10" fill="none" stroke="#17a2b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- === LAYER C: VISUALIZATION === -->
+  <g transform="translate(40, 474)">
+    <rect width="640" height="180" rx="10" fill="#1a2230" stroke="rgba(23, 162, 184, 0.2)"/>
+    <text x="24" y="28" font-family="'JetBrains Mono', monospace" font-size="10" fill="#17a2b8" letter-spacing="2" font-weight="600">LAYER C · VISUALIZATION · GRAFANA</text>
+
+    <!-- Mini dashboard: bar chart -->
+    <g transform="translate(24, 50)">
+      <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="9" fill="#8a9099" letter-spacing="1">STABILITY SCORE / ASSET</text>
+      <g transform="translate(0, 10)">
+        <rect x="0" y="20" width="18" height="80" fill="url(#green)" rx="2"/>
+        <rect x="26" y="10" width="18" height="90" fill="url(#green)" rx="2"/>
+        <rect x="52" y="28" width="18" height="72" fill="url(#green)" rx="2"/>
+        <rect x="78" y="16" width="18" height="84" fill="url(#green)" rx="2"/>
+        <rect x="104" y="24" width="18" height="76" fill="url(#green)" rx="2"/>
+        <rect x="130" y="60" width="18" height="40" fill="url(#amber)" rx="2"/>
+        <rect x="156" y="50" width="18" height="50" fill="url(#amber)" rx="2"/>
+        <rect x="182" y="70" width="18" height="30" fill="#ef4444" rx="2"/>
+        <!-- baseline -->
+        <line x1="-4" y1="100" x2="204" y2="100" stroke="#3a4354" stroke-width="1"/>
+      </g>
+    </g>
+
+    <!-- KPI tiles -->
+    <g transform="translate(260, 60)">
+      <rect width="110" height="52" rx="6" fill="#0f1824" stroke="rgba(23, 162, 184, 0.3)"/>
+      <text x="12" y="16" font-family="'JetBrains Mono', monospace" font-size="8" fill="#8a9099" letter-spacing="1">ASSETS</text>
+      <text x="12" y="40" font-family="Roboto, sans-serif" font-size="22" fill="#f9f1e9" font-weight="700">16</text>
+
+      <rect x="120" width="110" height="52" rx="6" fill="#0f1824" stroke="rgba(23, 162, 184, 0.3)"/>
+      <text x="132" y="16" font-family="'JetBrains Mono', monospace" font-size="8" fill="#8a9099" letter-spacing="1">MEDIAN JITTER</text>
+      <text x="132" y="40" font-family="Roboto, sans-serif" font-size="22" fill="#17a2b8" font-weight="700">4.6<tspan font-size="12" fill="#8a9099">mm</tspan></text>
+
+      <rect y="62" width="110" height="52" rx="6" fill="#0f1824" stroke="rgba(23, 162, 184, 0.3)"/>
+      <text x="12" y="78" font-family="'JetBrains Mono', monospace" font-size="8" fill="#8a9099" letter-spacing="1">STABILITY</text>
+      <text x="12" y="102" font-family="Roboto, sans-serif" font-size="22" fill="#4ade80" font-weight="700">82.7</text>
+
+      <rect x="120" y="62" width="110" height="52" rx="6" fill="#0f1824" stroke="rgba(23, 162, 184, 0.3)"/>
+      <text x="132" y="78" font-family="'JetBrains Mono', monospace" font-size="8" fill="#8a9099" letter-spacing="1">CLASS GREEN</text>
+      <text x="132" y="102" font-family="Roboto, sans-serif" font-size="22" fill="#4ade80" font-weight="700">90<tspan font-size="12" fill="#8a9099">%</tspan></text>
+    </g>
+
+    <!-- Line chart -->
+    <g transform="translate(510, 60)">
+      <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="9" fill="#8a9099" letter-spacing="1">TREND / 9h SESSION</text>
+      <polyline points="0,60 15,50 30,55 45,40 60,42 75,30 90,35 105,28 120,20" fill="none" stroke="#17a2b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+      <polyline points="0,72 15,68 30,70 45,60 60,58 75,52 90,55 105,48 120,42" fill="none" stroke="#4ade80" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+      <line x1="0" y1="90" x2="124" y2="90" stroke="#3a4354" stroke-width="1"/>
+    </g>
+  </g>
+
+  <!-- === LAYER D: ALERTING === -->
+  <g transform="translate(696, 474)">
+    <rect width="464" height="180" rx="10" fill="#1a2230" stroke="rgba(23, 162, 184, 0.2)"/>
+    <text x="24" y="28" font-family="'JetBrains Mono', monospace" font-size="10" fill="#17a2b8" letter-spacing="2" font-weight="600">LAYER D · ALERTING · 6 RULES</text>
+
+    <!-- Alert rows -->
+    <g transform="translate(24, 48)" font-family="'JetBrains Mono', monospace" font-size="11">
+      <g transform="translate(0, 0)">
+        <circle cx="6" cy="6" r="4" fill="#ef4444"/>
+        <text x="18" y="10" fill="#f9f1e9">Asset Unstable</text>
+        <text x="300" y="10" fill="#ef4444" text-anchor="end" font-size="9" letter-spacing="1">CRITICAL</text>
+      </g>
+      <g transform="translate(0, 22)">
+        <circle cx="6" cy="6" r="4" fill="#fbbf24"/>
+        <text x="18" y="10" fill="#f9f1e9">Low Visibility</text>
+        <text x="300" y="10" fill="#fbbf24" text-anchor="end" font-size="9" letter-spacing="1">WARNING</text>
+      </g>
+      <g transform="translate(0, 44)">
+        <circle cx="6" cy="6" r="4" fill="#fbbf24"/>
+        <text x="18" y="10" fill="#f9f1e9">Device Degraded</text>
+        <text x="300" y="10" fill="#fbbf24" text-anchor="end" font-size="9" letter-spacing="1">WARNING</text>
+      </g>
+      <g transform="translate(0, 66)">
+        <circle cx="6" cy="6" r="4" fill="#ef4444"/>
+        <text x="18" y="10" fill="#f9f1e9">Device No Data</text>
+        <text x="300" y="10" fill="#ef4444" text-anchor="end" font-size="9" letter-spacing="1">CRITICAL</text>
+      </g>
+      <g transform="translate(0, 88)">
+        <circle cx="6" cy="6" r="4" fill="#fbbf24"/>
+        <text x="18" y="10" fill="#f9f1e9">Zone High Severity</text>
+        <text x="300" y="10" fill="#fbbf24" text-anchor="end" font-size="9" letter-spacing="1">WARNING</text>
+      </g>
+      <g transform="translate(0, 110)">
+        <circle cx="6" cy="6" r="4" fill="#ef4444"/>
+        <text x="18" y="10" fill="#f9f1e9">ETL Not Running</text>
+        <text x="300" y="10" fill="#ef4444" text-anchor="end" font-size="9" letter-spacing="1">CRITICAL</text>
+      </g>
+    </g>
+
+    <!-- Connecting tile38 cloud mark -->
+    <g transform="translate(440, 158)">
+      <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="9" fill="#4a5262" text-anchor="end">+ Tile38 · geofence   +   cron · every 5 min</text>
+    </g>
+  </g>
+
+  <!-- Bottom signature -->
+  <g transform="translate(40, 698)">
+    <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="10" fill="#4a5262" letter-spacing="1">
+      PHASE 1 / 10 · DELIVERED APRIL 2026 · ATH INFOSYSTEMS
+    </text>
+    <text x="1120" y="0" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" fill="#4a5262" letter-spacing="1">
+      VAIBHAV RAJ
+    </text>
+  </g>
+</svg>

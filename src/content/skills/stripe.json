@@ -1,0 +1,6 @@
+{
+  "name": "Stripe",
+  "icon": "/icons/stripe.png",
+  "category": "APIs & LLMs",
+  "order": 230
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Kubernetes",
+  "icon": "/icons/Kubernetes.png",
+  "category": "Infra",
+  "order": 250
+}

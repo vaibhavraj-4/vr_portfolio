@@ -1,0 +1,6 @@
+{
+  "name": "NumPy",
+  "icon": "/icons/numpy.png",
+  "category": "Data & ML",
+  "order": 110
+}

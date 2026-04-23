@@ -1,0 +1,14 @@
+{
+  "title": "Infra Creation Automation",
+  "section": "Internship",
+  "summary": "Gemini-powered architecture generator",
+  "description": "React-based dynamic form that gathers infrastructure requirements and uses Gemini with careful prompt engineering to recommend a tech stack and generate architecture diagrams. Chat interface for modifications — <strong>40% reduction</strong> in manual input, <strong>25% improvement</strong> in project planning accuracy.",
+  "image": "/projects/infra-automation.svg",
+  "tags": [
+    "React",
+    "Django",
+    "Gemini",
+    "Prompt Engineering"
+  ],
+  "order": 40
+}

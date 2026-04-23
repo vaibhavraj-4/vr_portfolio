@@ -1,0 +1,45 @@
+---
+import { getEntry, getCollection } from 'astro:content';
+
+const about = await getEntry('about', 'index');
+const data = about?.data ?? { typedStrings: [], blocks: [] };
+
+// Skills: sort by order then category
+const allSkills = (await getCollection('skills')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<section id="about" class="about-section">
+  <div class="typo_animation">
+    <span
+      id="typed-output"
+      class="typing-effect"
+      aria-live="polite"
+      data-strings={JSON.stringify(data.typedStrings)}
+    ></span>
+  </div>
+
+  <div class="container">
+    <h3 class="section-heading">Skills</h3>
+    <div class="skills-grid" data-aos="fade-up">
+      {allSkills.map((s) => (
+        <div class="skill">
+          <img
+            src={s.data.icon}
+            alt={s.data.name}
+            onerror="this.style.visibility='hidden'"
+          />
+          <p>{s.data.name}</p>
+        </div>
+      ))}
+    </div>
+
+    {data.blocks.map((block) => (
+      <>
+        <h2 class="section-heading">{block.heading}</h2>
+        <p class="prose" set:html={block.body} />
+      </>
+    ))}
+  </div>
+</section>

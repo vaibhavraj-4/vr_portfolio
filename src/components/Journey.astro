@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+
+const entries = (await getCollection('journey')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<section id="journey" class="journey-section">
+  <div class="container">
+    <div class="journey-head">
+      <h2 class="section-heading">Journey</h2>
+      <p class="section-lead">
+        Roles where I've applied what I know and learned what I didn't.
+      </p>
+    </div>
+
+    <div class="timeline">
+      {entries.map((entry) => (
+        <div class={`timeline-container ${entry.data.side}`} data-aos="fade-up">
+          <div class="timeline-content">
+            {entry.data.logo && (
+              <img
+                src={entry.data.logo}
+                alt={entry.data.org}
+                class="timeline-logo"
+                onerror="this.style.display='none'"
+              />
+            )}
+            <h3>{entry.data.title}</h3>
+            <h4>{entry.data.org}</h4>
+            <p set:html={entry.data.description} />
+            {entry.data.skills.length > 0 && (
+              <div class="timeline-skills">
+                {entry.data.skills.map((tag) => (
+                  <div class="skill-tag">{tag}</div>
+                ))}
+              </div>
+            )}
+            <span class="timeline-date">{entry.data.dateRange}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
