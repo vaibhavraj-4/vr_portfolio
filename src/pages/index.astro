@@ -28,6 +28,10 @@ import Contact from '../components/Contact.astro';
   <!-- Dynamic Typed.js init that reads strings from [data-strings] -->
   <script is:inline>
     (function () {
+      // Guard: prevent double-init (e.g. if script runs twice via HMR)
+      if (window.__typedInitDone) return;
+      window.__typedInitDone = true;
+
       function initTyped() {
         if (typeof Typed === 'undefined') {
           setTimeout(initTyped, 200);
@@ -36,26 +40,41 @@ import Contact from '../components/Contact.astro';
         const el = document.getElementById('typed-output');
         if (!el) return;
 
+        // If somehow an instance already exists, destroy it first
+        if (el.__typedInstance) {
+          try { el.__typedInstance.destroy(); } catch (e) {}
+          el.__typedInstance = null;
+        }
+
         let strings = [];
         try {
           strings = JSON.parse(el.dataset.strings || '[]');
         } catch (e) {
-  strings = ["Hello! I'm Vaibhav Raj."];
-}
+          strings = ["Hello! I'm Vaibhav Raj."];
+        }
+
         const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (reduced) {
           el.textContent = strings[1] || strings[0] || '';
           return;
         }
 
-        new Typed('#typed-output', {
+        // GPU-friendly hints to eliminate per-frame repaints
+        el.style.willChange = 'contents';
+        el.style.transform = 'translateZ(0)';
+
+        el.__typedInstance = new Typed('#typed-output', {
           strings,
-          typeSpeed: 55,
-          backSpeed: 25,
-          backDelay: 1400,
-          startDelay: 300,
+          typeSpeed: 60,       // slightly slower = less micro-jitter per frame
+          backSpeed: 30,       // smooth backspace
+          backDelay: 2000,     // longer pause at full string = feels intentional
+          startDelay: 400,
           loop: true,
           smartBackspace: true,
+          showCursor: true,
+          cursorChar: '|',
+          fadeOut: false,      // fadeOut looks jumpy on wide text
+          autoInsertCss: false // we define the cursor style in CSS for control
         });
       }
       if (document.readyState !== 'loading') initTyped();

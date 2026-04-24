@@ -1,6 +1,6 @@
 {
   "name": "Grafana",
-  "icon": "/icons/grafana.png",
+  "icon": "/icons/Grafana.png",
   "category": "Infra",
   "order": 210
 }

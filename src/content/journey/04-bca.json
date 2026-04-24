@@ -4,13 +4,8 @@
   "dateRange": "2022 — 2025",
   "location": "New Delhi · India",
   "description": "Graduated with CGPA 8.691. Built early ML projects in parallel — multimodal emotion detection (audio + text fusion) and a CNN-based waste segregation classifier with a Flask front-end.",
-  "skills": [
-    "CNN",
-    "TensorFlow",
-    "Multimodal ML",
-    "Flask"
-  ],
-  "logo": "/icons/bciit-logo.png",
+  "skills": ["CNN", "TensorFlow", "Multimodal ML", "Flask"],
+  "logo": "/icons/BCIIT.png",
   "order": 40,
   "side": "right",
   "current": false

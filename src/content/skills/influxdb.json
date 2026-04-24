@@ -1,6 +1,6 @@
 {
   "name": "InfluxDB",
-  "icon": "/icons/influxdb.png",
+  "icon": "/icons/InfluxDB.png",
   "category": "Infra",
   "order": 200
 }

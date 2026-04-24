@@ -36,43 +36,21 @@
           easing: "ease-out-cubic",
           once: true,
           offset: 60,
-          disable: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+          disable: window.matchMedia("(prefers-reduced-motion: reduce)")
+            .matches,
         });
       }
     });
   }
 
   /* ----------------------------------------------------------------------
-     2. Typed.js rotating intro
+     2. Typed.js — handled by the Astro inline script on index.astro
+     which reads rotating strings from the content collection.
+     Leaving this here as a no-op so the init chain stays intact.
      ---------------------------------------------------------------------- */
   function initTyped() {
-    if (typeof Typed === "undefined") return;
-    var target = document.getElementById("typed-output");
-    if (!target) return;
-
-    var prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-    if (prefersReducedMotion) {
-      target.textContent = "AI/ML Engineer @ ATH Infosystems";
-      return;
-    }
-
-    new Typed("#typed-output", {
-      strings: [
-        "Hello! I'm Vaibhav Raj.",
-        "AI/ML Engineer @ ATH Infosystems.",
-        "Currently shipping SINTRA analytics.",
-        "I build production data systems.",
-      ],
-      typeSpeed: 55,
-      backSpeed: 25,
-      backDelay: 1400,
-      startDelay: 300,
-      loop: true,
-      smartBackspace: true,
-    });
+    // Intentionally empty — see src/pages/index.astro for the real init.
+    // Running it here too would double-initialize and cause jitter.
   }
 
   /* ----------------------------------------------------------------------
@@ -116,9 +94,7 @@
      4. Scroll-spy: highlight the nav link for the section currently in view
      ---------------------------------------------------------------------- */
   function initScrollSpy() {
-    var sections = document.querySelectorAll(
-      "section[id]"
-    );
+    var sections = document.querySelectorAll("section[id]");
     var navLinks = document.querySelectorAll("[data-nav]");
     if (!sections.length || !navLinks.length) return;
 
@@ -137,8 +113,12 @@
       function (entries) {
         // Find the entry with highest intersection ratio that's intersecting
         var visible = entries
-          .filter(function (e) { return e.isIntersecting; })
-          .sort(function (a, b) { return b.intersectionRatio - a.intersectionRatio; });
+          .filter(function (e) {
+            return e.isIntersecting;
+          })
+          .sort(function (a, b) {
+            return b.intersectionRatio - a.intersectionRatio;
+          });
 
         if (visible.length) {
           setActive(visible[0].target.id);
@@ -147,7 +127,7 @@
       {
         rootMargin: "-30% 0px -60% 0px", // require section to be near viewport center
         threshold: [0, 0.25, 0.5, 0.75, 1],
-      }
+      },
     );
 
     sections.forEach(function (s) {
@@ -178,7 +158,7 @@
           btn.classList.remove("visible");
         }
       },
-      { passive: true }
+      { passive: true },
     );
 
     btn.addEventListener("click", function () {
@@ -204,7 +184,7 @@
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
     observer.observe(hero);
 
@@ -290,7 +270,7 @@
           header.style.boxShadow = "0 2px 12px rgba(0, 0, 0, 0.15)";
         }
       },
-      { passive: true }
+      { passive: true },
     );
   }
 
@@ -301,11 +281,11 @@
     if (window.console && console.log) {
       console.log(
         "%c Vaibhav Raj — AI/ML Engineer ",
-        "background: #000; color: #f9f1e9; padding: 6px 12px; font-size: 14px;"
+        "background: #000; color: #f9f1e9; padding: 6px 12px; font-size: 14px;",
       );
       console.log(
         "%c Like what you see? Let's talk → vaibhavraj4149@gmail.com ",
-        "color: #888; font-size: 12px;"
+        "color: #888; font-size: 12px;",
       );
     }
   }

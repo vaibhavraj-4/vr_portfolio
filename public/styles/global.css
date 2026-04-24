@@ -24,7 +24,11 @@
 
 * {
   box-sizing: border-box;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family:
+    "Roboto",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
 }
 
 html {
@@ -46,8 +50,12 @@ body.single-page {
   animation: pageFadeIn 0.5s ease-out;
 }
 @keyframes pageFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .container {
@@ -159,7 +167,9 @@ body.single-page {
   width: 22px;
   height: 2px;
   background: #fff;
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
 }
 .nav-toggle.open span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
@@ -195,7 +205,9 @@ body.single-page {
 .mobile-drawer li {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
-.mobile-drawer li:last-child { border-bottom: none; }
+.mobile-drawer li:last-child {
+  border-bottom: none;
+}
 .mobile-drawer a {
   display: block;
   color: #fff;
@@ -212,8 +224,12 @@ body.single-page {
 }
 
 @media (max-width: 820px) {
-  .primary-nav { display: none; }
-  .nav-toggle { display: flex; }
+  .primary-nav {
+    display: none;
+  }
+  .nav-toggle {
+    display: flex;
+  }
 }
 
 /* ============================================================================
@@ -317,10 +333,16 @@ body.single-page {
 }
 
 @keyframes heroRise {
-  to { opacity: 1; transform: translateY(0); }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @keyframes heroRiseDim {
-  to { opacity: 0.85; transform: translateY(0); }
+  to {
+    opacity: 0.85;
+    transform: translateY(0);
+  }
 }
 
 /* Scroll cue at bottom of hero */
@@ -343,10 +365,19 @@ body.single-page {
   transition: opacity 0.3s ease;
   animation: scrollCue 2.5s ease-in-out infinite;
 }
-.scroll-cue:hover { opacity: 1; }
+.scroll-cue:hover {
+  opacity: 1;
+}
 @keyframes scrollCue {
-  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.7; }
-  50% { transform: translateX(-50%) translateY(6px); opacity: 1; }
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateX(-50%) translateY(6px);
+    opacity: 1;
+  }
 }
 
 /* Social sidebar — desktop: left fixed; mobile: bottom pill */
@@ -366,11 +397,15 @@ body.single-page {
   margin: 0;
   padding: 0;
 }
-.social-sidebar li { margin: 10px 0; }
+.social-sidebar li {
+  margin: 10px 0;
+}
 .social-sidebar a img {
   width: 36px;
   height: 36px;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
   display: block;
 }
 .social-sidebar a img:hover {
@@ -392,14 +427,24 @@ body.single-page {
     display: flex;
     gap: 14px;
   }
-  .social-sidebar li { margin: 0; }
-  .social-sidebar a img { width: 26px; height: 26px; }
+  .social-sidebar li {
+    margin: 0;
+  }
+  .social-sidebar a img {
+    width: 26px;
+    height: 26px;
+  }
   /* Hide some icons at very small sizes */
-  .social-sidebar li:nth-child(n + 4) { display: none; }
+  .social-sidebar li:nth-child(n + 4) {
+    display: none;
+  }
 }
 
 /* Hide social sidebar once user scrolls past hero (for all pages, JS-toggled) */
-.social-sidebar.hidden { opacity: 0; pointer-events: none; }
+.social-sidebar.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
 
 /* ============================================================================
    SECTION COMMONS
@@ -471,8 +516,13 @@ section {
   max-width: 100%;
 }
 @keyframes caret {
-  from, to { border-color: transparent; }
-  50% { border-color: var(--accent); }
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--accent);
+  }
 }
 
 /* Skills grid */
@@ -493,7 +543,9 @@ section {
   gap: 0.5rem;
   padding: 0.75rem;
   border-radius: 8px;
-  transition: transform 0.25s ease, background 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
 }
 .skills-grid .skill:hover {
   transform: translateY(-3px);
@@ -545,8 +597,12 @@ section {
   width: 50%;
   box-sizing: border-box;
 }
-.timeline-container.left { left: 0; }
-.timeline-container.right { left: 50%; }
+.timeline-container.left {
+  left: 0;
+}
+.timeline-container.right {
+  left: 50%;
+}
 
 .timeline-container::after {
   content: "";
@@ -559,8 +615,12 @@ section {
   border-radius: 50%;
   z-index: 1;
 }
-.timeline-container.left::after { right: -12px; }
-.timeline-container.right::after { left: -12px; }
+.timeline-container.left::after {
+  right: -12px;
+}
+.timeline-container.right::after {
+  left: -12px;
+}
 
 .timeline-content {
   padding: clamp(1.2rem, 3vw, 2rem);
@@ -623,13 +683,17 @@ section {
 
 /* Mobile timeline: single column on left */
 @media (max-width: 767px) {
-  .timeline::after { left: 24px; }
+  .timeline::after {
+    left: 24px;
+  }
   .timeline-container {
     width: 100%;
     padding-left: 60px;
     padding-right: 12px;
   }
-  .timeline-container.right { left: 0; }
+  .timeline-container.right {
+    left: 0;
+  }
   .timeline-container.left::after,
   .timeline-container.right::after {
     left: 13px;
@@ -643,7 +707,9 @@ section {
 .projects-section {
   background: var(--bg);
 }
-.projects-head { margin-bottom: 2rem; }
+.projects-head {
+  margin-bottom: 2rem;
+}
 
 .project {
   margin-bottom: clamp(2rem, 4vw, 3rem);
@@ -684,7 +750,9 @@ section {
   border-radius: 12px;
   box-shadow: var(--shadow-sm);
   border: 1px solid rgba(0, 0, 0, 0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 .project-content:hover {
   transform: translateY(-3px);
@@ -721,7 +789,9 @@ section {
   border-radius: 6px;
   font-size: 0.95rem;
   font-weight: 500;
-  transition: background 0.25s ease, transform 0.15s ease;
+  transition:
+    background 0.25s ease,
+    transform 0.15s ease;
 }
 .project-link:hover {
   background: var(--accent-dark);
@@ -756,7 +826,9 @@ section {
   border-radius: 12px;
   box-shadow: var(--shadow-sm);
   border: 1px solid rgba(0, 0, 0, 0.04);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 .fun-card:hover {
   transform: translateY(-3px);
@@ -788,7 +860,9 @@ section {
 .credentials-section {
   background: var(--bg-card);
 }
-.credentials-head { margin-bottom: 2rem; }
+.credentials-head {
+  margin-bottom: 2rem;
+}
 
 .certificate-item,
 .award-item,
@@ -803,7 +877,9 @@ section {
   box-shadow: var(--shadow-sm);
   border: 1px solid rgba(0, 0, 0, 0.04);
   position: relative;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 .certificate-item:hover,
 .award-item:hover,
@@ -849,7 +925,9 @@ section {
   border-radius: 6px;
   transition: background 0.2s ease;
 }
-.cert-link:hover { background: rgba(23, 162, 184, 0.2); }
+.cert-link:hover {
+  background: rgba(23, 162, 184, 0.2);
+}
 .cert-link img {
   width: 18px;
   height: 18px;
@@ -874,10 +952,14 @@ section {
   }
   .certificate-item p,
   .award-item p,
-  .activity-item p { text-align: center; }
+  .activity-item p {
+    text-align: center;
+  }
 }
 
-.zoomable { cursor: zoom-in; }
+.zoomable {
+  cursor: zoom-in;
+}
 
 /* ============================================================================
    CONTACT
@@ -955,7 +1037,9 @@ section {
   border-bottom: 1px solid var(--rule);
   align-items: center;
 }
-.contact-row:last-child { border-bottom: none; }
+.contact-row:last-child {
+  border-bottom: none;
+}
 .contact-label {
   font-size: 0.8rem;
   letter-spacing: 0.12em;
@@ -970,7 +1054,9 @@ section {
   transition: color 0.2s ease;
   word-break: break-all;
 }
-.contact-row a:hover { color: var(--accent); }
+.contact-row a:hover {
+  color: var(--accent);
+}
 
 @media (max-width: 540px) {
   .contact-row {
@@ -1019,7 +1105,9 @@ section {
   font-size: 0.9rem;
   transition: color 0.2s ease;
 }
-.footer-links a:hover { color: var(--accent); }
+.footer-links a:hover {
+  color: var(--accent);
+}
 .footer-copy {
   margin: 0;
   font-size: 0.8rem;
@@ -1094,8 +1182,12 @@ section {
   padding: 40px 20px;
 }
 @keyframes modalFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .modal-content {
   margin: 0;
@@ -1168,21 +1260,76 @@ button:focus-visible,
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html {
+    scroll-behavior: auto;
+  }
   [data-aos] {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
   }
-  .main-title, .role-line, .information {
+  .main-title,
+  .role-line,
+  .information {
     animation: none;
     opacity: 1;
     transform: none;
   }
-  .information { opacity: 0.85; }
-  .scroll-cue { animation: none; }
+  .information {
+    opacity: 0.85;
+  }
+  .scroll-cue {
+    animation: none;
+  }
   .typing-effect {
     border-right: none;
     animation: none;
   }
+}
+
+/* ============================================================================
+   TYPED.JS SMOOTHNESS FIX
+   Stabilizes the typing container so adjacent content doesn't reflow
+   as the string length changes. Also GPU-accelerates the element to
+   eliminate per-character repaint jitter.
+   ============================================================================ */
+
+.typo_animation {
+  /* Reserve vertical space so the whole page doesn't jump as typing progresses */
+  min-height: clamp(4rem, 10vw, 6rem);
+  display: flex;
+  align-items: center;
+  /* Promote to its own compositor layer — GPU handles redraws */
+  contain: layout paint;
+}
+
+.typing-effect {
+  /* Promote to GPU so character changes don't trigger full repaints */
+  will-change: contents;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+
+  /* Slightly tighter line-height keeps vertical jitter minimal */
+  line-height: 1.15;
+
+  /* Smoother cursor animation — steps(1) replaces the jitter-prone step-end */
+  animation-timing-function: steps(1, end);
+}
+
+/* Override the old caret animation with a smoother version */
+@keyframes caret {
+  0%,
+  100% {
+    border-right-color: var(--accent);
+  }
+  50% {
+    border-right-color: transparent;
+  }
+}
+
+/* If JS initializes Typed.js before CSS paints, the cursor created by
+   Typed.js (".typed-cursor") gets its own blink — disable it so ours rules */
+.typed-cursor {
+  display: none !important;
 }

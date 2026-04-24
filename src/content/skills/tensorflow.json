@@ -1,6 +1,6 @@
 {
   "name": "TensorFlow",
-  "icon": "/icons/tensorflow.png",
+  "icon": "/icons/TensorFlow.png",
   "category": "Data & ML",
   "order": 140
 }
